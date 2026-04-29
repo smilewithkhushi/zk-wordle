@@ -1,0 +1,7 @@
+[package]
+name = "wordle"
+type = "bin"
+authors = ["khushi", "zk-wordle"]
+compiler_version = ">=0.1.0"
+
+[dependencies]
