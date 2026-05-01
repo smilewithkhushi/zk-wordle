@@ -1,24 +1,27 @@
 docs/
 
-# Noir circuit — secret inputs and compiled artifacts
 circuit/Prover.toml
 circuit/target/
 
-# Environment variables — seed phrase, RPC URLs, contract addresses
 .env
 .env.local
 .env*.local
+scripts/.env
+scripts/.env.local
 
-# Next.js build output
+
 frontend/.next/
 frontend/out/
 
-# Aggregation data — written at runtime by submit script
+# Aggregation data 
 frontend/aggregation.json
 
 # Dependencies
 node_modules/
 frontend/node_modules/
+scripts/node_modules/
+
+circuit/aggregation.json
 
 # OS
 .DS_Store

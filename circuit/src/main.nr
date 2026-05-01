@@ -1,15 +1,14 @@
 // ---------------------------------------------------------------------------
 // ZK Wordle circuit
-// Private inputs : guesses, target  (never leave the user's machine)
-// Public inputs  : commitment, daily_salt, attempt_count, feedback
+// All inputs are private - nothing is revealed to the verifier
 // ---------------------------------------------------------------------------
 fn main(
-    guesses:       [[u8; 5]; 6],     // private - the words you actually typed
-    target:        [u8; 5],          // private - today's answer
-    commitment:    pub Field,         // public  - poseidon(word_as_field, daily_salt)
-    daily_salt:    pub Field,         // public  - date as field (YYYYMMDD)
-    attempt_count: pub u8,            // public  - how many guesses you used (1-6)
-    feedback:      pub [[u8; 5]; 6]  // public  - tile colors: GREEN=2, YELLOW=1, GRAY=0
+    guesses:       [[u8; 5]; 6],    // private - the words you actually typed
+    target:        [u8; 5],         // private - today's answer
+    commitment:    Field,            // private - poseidon(word_as_field, daily_salt)
+    daily_salt:    Field,            // private - date as field (YYYYMMDD)
+    attempt_count: u8,               // private - how many guesses you used (1-6)
+    feedback:      [[u8; 5]; 6]     // private - tile colors: GREEN=2, YELLOW=1, GRAY=0
 ) {
     // -----------------------------------------------------------------------
     // 1. Commitment check

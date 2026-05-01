@@ -1,0 +1,12 @@
+{
+  "name": "wordle-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "submit": "node submit.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "zkverifyjs": "^2.3.0"
+  }
+}
